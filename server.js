@@ -32,10 +32,7 @@ if(env === "development") {
   mongoose.connect('mongodb://localhost/multivision');
 } else {
   mongoose.connect('mongodb://pborodich:Boarder28@ds053764.mongolab.com:53764/techy-train');
-}
-
-
-
+};
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error...'))
@@ -60,6 +57,7 @@ app.get('*', function (req, res) { // * matches all routes to deleviver index pa
 });
 
 var port = process.env.PORT || 3030;
-app.listen(port);
-console.log('listening on port ' + port + '...')
+app.listen(port, function() {
+  console.log('listening on port ' + port + '...')
+});
 

@@ -1,0 +1,33 @@
+{
+  "name": "techy-train",
+  "version": "0.0.0",
+  "description": "\"login skelleton\"",
+  "main": "index.js",
+  "dependencies": {
+    "mongoose": "^4.2.5",
+    "jade": "^1.11.0",
+    "express": "^4.13.3",
+    "stylus": "^0.52.4",
+    "body-parser": "^1.14.1",
+    "morgan": "^1.6.1"
+  },
+  "engines": {
+    "node":"0.12.x",
+    "npm":"2.7.x"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PwBwolf/techy-train.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PwBwolf/techy-train/issues"
+  },
+  "homepage": "https://github.com/PwBwolf/techy-train"
+}

@@ -19,7 +19,7 @@ module.exports = function(app, config) {
     app.use(cookieParser());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
-    app.use(session({secret: 'multi vision unicorns'}));
+    app.use(session({secret: 'multi vision unicorns',resave:false,saveUninitialized:false}));
     app.use(passport.initialize());
     app.use(stylus.middleware(
         {

@@ -1,21 +1,12 @@
-var passport = require('passport');
+var auth = require('./auth');
+
 
 module.exports = function (app) {
     app.get('/partials/*', function (req, res) {
         res.render('../../public/app/' + req.params[0]); //req.params is an array and the first positon will match up to the * in the path
     });
     
-    app.post('/login', function(req, res, next) {
-        var auth = passport.authenticate('local', function(err, user) {
-            if(err) {return next(err);}
-            if(!user) {res.send({success:false})}
-            req.logIn(user, function(err) {
-                if(err) {return next(err);}
-                res.send({succecs:true, user: user});
-            })
-        })
-        auth(req, res, next);
-    })
+    app.post('/login', auth.authenticate)
 
     app.get('*', function (req, res) { // * matches all routes to deleviver index page that has client side routing.
         res.render('index');

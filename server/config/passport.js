@@ -4,8 +4,10 @@ var passport = require('passport'),
     User = mongoose.model('User');
 
 module.exports = function () {
+
     passport.use(new LocalStrategy(
         function(username, password, done) {
+            console.log(username)
             User.findOne({username:username}).exec(function(err, user) {
                 if(user && user.authenticate(password)) {
                     return done(null, user);
@@ -15,11 +17,6 @@ module.exports = function () {
             })
         }
     ));
-
-    app.use(function(req, res, next) {
-        console.log(req.user);
-        next()
-    })
 
     passport.serializeUser(function (user, done) {
         if(user) {

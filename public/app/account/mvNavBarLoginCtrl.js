@@ -2,10 +2,11 @@ angular.module('app').controller('myNavBarLoginCtrl', function($scope, $http, mv
     $scope.identity = mvIdentity;
     $scope.signin = function(username, password) {
         mvAuth.authenticateUser(username, password).then(function (success) {
-            if(success) {
+            if (success) {
                 mvNotifier.notify('You have successfully signed in!');
             } else {
                 mvNotifier.notify('Username/Passowrd combination incorrect!');
+
             }
         })
     }
@@ -20,3 +21,4 @@ angular.module('app').controller('myNavBarLoginCtrl', function($scope, $http, mv
     }
 
 });
+

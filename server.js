@@ -1,4 +1,4 @@
-var express = require('express'),
+var express = require('express');
 
 //set the enviroment if it has been set by node
 var env  = process.env.NODE_ENV = process.env.NODE_ENV || "development";
